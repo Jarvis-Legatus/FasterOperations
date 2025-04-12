@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-// import { signIn } from "next-auth/react"; // Removed auth
+// import { signIn } from "next-auth/react"; // Keep commented out as requested
 import toast from "react-hot-toast";
 import { validateEmail } from "@/utils/validateEmail";
 import Loader from "@/components/Common/Loader";
@@ -21,22 +21,30 @@ const MagicLink = () => {
       setLoader(false);
       return toast.error("Please enter a valid email address.");
     } else {
+      // --- START: Comment out the actual signIn call and its handlers ---
+      /*
       signIn("email", {
         redirect: false,
         email: email,
       })
-        .then((callback) => {
+        .then((callback: any) => { // Added ': any' temporarily if uncommenting, better to use proper type
           if (callback?.ok) {
             toast.success("Email sent");
             setEmail("");
             setLoader(false);
           }
         })
-        .catch((error) => {
+        .catch((error: any) => { // Added ': any' temporarily if uncommenting, better to use 'unknown' or 'Error'
           console.log(error);
           toast.error("Unable to send email!");
           setLoader(false);
         });
+      */
+      // --- END: Comment out the actual signIn call and its handlers ---
+
+      // Since the above is commented out, provide feedback that it's disabled
+      toast.error("Magic Link sign-in is currently disabled.");
+      setLoader(false); // Stop the loader
     }
   };
 

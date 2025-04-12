@@ -1,5 +1,5 @@
 "use client";
-// import { signOut, useSession } from "next-auth/react"; // Keep commented out if you don't need session checking anywhere else
+// import { signOut, useSession } from "next-auth/react"; // Keep commented out as requested
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import menuData from "./menuData";
 
 const Header = () => {
-  // const { data: session } = useSession(); // Removed auth
+  // const { data: session } = useSession(); // Keep commented out as requested
 
   const pathUrl = usePathname();
   // Navbar toggle
@@ -286,55 +286,95 @@ const Header = () => {
                   </span>
                 </button>
 
-                {/* {session?.user ? ( ... ) : ( ... ) } - Removed auth check */}
-                {/* Always show the non-logged-in state */}
+                {/* --- START: Original Authentication Logic Block (Now Fully Commented) --- */}
+                {/*
+                {session?.user ? (
+                  // Code for logged-in user (e.g., Sign Out button) would go here if uncommented
+                  // Example:
+                  // <button onClick={() => signOut()}>Sign Out</button>
                 ) : (
+                  // Code for logged-out user (Sign In/Sign Up) would go here if uncommented
                   <>
                     {pathUrl !== "/" ? (
                       <>
-                        {/* <Link
+                        <Link
                           href="/signin"
                           className="px-7 py-3 text-base font-medium text-dark hover:opacity-70 dark:text-white"
                         >
                           Sign In
-                        </Link> */}
-                        <a
-                          href="#"
-                          data-cal-link="fasteroperations/30min"
-                          data-cal-namespace="30min"
-                          data-cal-config='{"layout":"month_view"}'
+                        </Link>
+                        <Link
+                          href="/signup"
                           className="rounded-lg bg-primary px-6 py-3 text-base font-medium text-white duration-300 ease-in-out hover:bg-primary/90 dark:bg-white/10 dark:hover:bg-white/20"
                         >
-                          Book a Call
-                        </a>
+                          Sign Up
+                        </Link>
                       </>
                     ) : (
                       <>
-                        {/* <Link
+                        <Link
                           href="/signin"
                           className={`px-7 py-3 text-base font-medium hover:opacity-70 ${
                             sticky ? "text-dark dark:text-white" : "text-white"
                           }`}
                         >
                           Sign In
-                        </Link> */}
-                        <a
-                          href="#"
-                          data-cal-link="fasteroperations/30min"
-                          data-cal-namespace="30min"
-                          data-cal-config='{"layout":"month_view"}'
+                        </Link>
+                        <Link
+                          href="/signup"
                           className={`rounded-lg px-6 py-3 text-base font-medium text-white duration-300 ease-in-out ${
                             sticky
                               ? "bg-primary hover:bg-primary/90 dark:bg-white/10 dark:hover:bg-white/20"
                               : "bg-white/10 hover:bg-white/20"
                           }`}
                         >
-                          Book a Call
-                        </a>
+                          Sign Up
+                        </Link>
                       </>
                     )}
                   </>
-                {/* )} */}
+                )}
+                */}
+                {/* --- END: Original Authentication Logic Block (Now Fully Commented) --- */}
+
+
+                {/* --- START: New "Book a Call" Button Logic (Always Displayed) --- */}
+                {/* This logic correctly shows the button based on pathUrl and sticky state */}
+                <>
+                  {pathUrl !== "/" ? (
+                    <>
+                      {/* <Link href="/signin" ... > Sign In </Link>  <- Keep original commented if desired */}
+                      <a
+                        href="#"
+                        data-cal-link="fasteroperations/30min"
+                        data-cal-namespace="30min"
+                        data-cal-config='{"layout":"month_view"}'
+                        className="rounded-lg bg-primary px-6 py-3 text-base font-medium text-white duration-300 ease-in-out hover:bg-primary/90 dark:bg-white/10 dark:hover:bg-white/20"
+                      >
+                        Book a Call
+                      </a>
+                    </>
+                  ) : (
+                    <>
+                      {/* <Link href="/signin" ... > Sign In </Link> <- Keep original commented if desired */}
+                      <a
+                        href="#"
+                        data-cal-link="fasteroperations/30min"
+                        data-cal-namespace="30min"
+                        data-cal-config='{"layout":"month_view"}'
+                        className={`rounded-lg px-6 py-3 text-base font-medium text-white duration-300 ease-in-out ${
+                          sticky
+                            ? "bg-primary hover:bg-primary/90 dark:bg-white/10 dark:hover:bg-white/20"
+                            : "bg-white/10 hover:bg-white/20"
+                        }`}
+                      >
+                        Book a Call
+                      </a>
+                    </>
+                  )}
+                </>
+                 {/* --- END: New "Book a Call" Button Logic --- */}
+
               </div>
             </div>
           </div>
