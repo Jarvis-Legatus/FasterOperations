@@ -22,7 +22,7 @@ const config: Config = {
           delete filteredColors['blueGray'];
           return filteredColors;
         })(),
-         primary: "#1A202C",  // MAIN COLOR CONTROL FOR ENTIRE THEME
+         primary: "#ef9100",  // MAIN COLOR CONTROL FOR ENTIRE THEME  1A202C
       },
     },
   },

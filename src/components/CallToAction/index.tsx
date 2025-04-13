@@ -17,12 +17,15 @@ const CallToAction = () => {
                 <p className="mx-auto mb-6 max-w-[515px] text-base leading-[1.5] text-white">
                   Discover how our AI and automation expertise can drive efficiency and innovation in your business.
                 </p>
-                <Link
-                  href="/"
+                <a
+                  href="#"
+                  data-cal-link="fasteroperations/30min"
+                  data-cal-namespace="30min"
+                  data-cal-config='{"layout":"month_view"}'
                   className="inline-block rounded-md border border-transparent bg-secondary px-7 py-3 text-base font-medium text-white transition hover:bg-[#0BB489]"
                 >
                   Contact Us Today
-                </Link>
+                </a>
               </div>
             </div>
           </div>

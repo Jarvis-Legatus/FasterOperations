@@ -12,7 +12,7 @@ const HowItWorksPage = () => {
   return (
     <>
       <Breadcrumb
-        pageName="How It Works"
+        pageName="Services"
       />
       <HowItWorks />
     </>
