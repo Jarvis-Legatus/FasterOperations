@@ -16,6 +16,8 @@ const Contact = () => {
                 </h2>
               </div>
               <div className="mb-12 flex flex-wrap justify-between lg:mb-0">
+                
+                {/* 
                 <div className="mb-8 flex w-[330px] max-w-full">
                   <div className="mr-6 text-[32px] text-primary">
                     <svg
@@ -37,6 +39,8 @@ const Contact = () => {
                     </p>
                   </div>
                 </div>
+                */}
+
                 <div className="mb-8 flex w-[330px] max-w-full">
                   <div className="mr-6 text-[32px] text-primary">
                     <svg
@@ -53,10 +57,7 @@ const Contact = () => {
                       Email Us
                     </h3>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      hello@[yourdomain].com
-                    </p>
-                    <p className="mt-1 text-base text-body-color dark:text-dark-6">
-                      sales@[yourdomain].com
+                      info@fasteroperations.com
                     </p>
                   </div>
                 </div>
@@ -106,7 +107,7 @@ const Contact = () => {
                     htmlFor="phone"
                     className="mb-4 block text-sm text-body-color dark:text-dark-6"
                   >
-                    Phone*
+                    Phone
                   </label>
                   <input
                     type="text"
